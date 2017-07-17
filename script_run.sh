@@ -2,6 +2,9 @@
 set -euxo pipefail
 
 mkdir -p /data
+
+[ ! -f /data/zone.conf ] && touch /data/zone.conf
+
 [ ! -f /data/root.zone ] && cat > /data/root.zone <<'EOL'
 @ IN SOA . dnsadmin.example.net. (
  2009092001 ; Serial
