@@ -17,5 +17,5 @@ $TTL 600
 *. IN A  127.0.0.1
 EOL
 
-chown -R bind:bind /data/*
+chown -R bind:bind /data
 exec /usr/sbin/named -g -u bind
