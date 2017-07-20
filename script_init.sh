@@ -29,6 +29,7 @@ options {
 	recursion no;
 	allow-query { any; };
 	allow-transfer { none; };
+	version "Faraz";
 };
 EOL
 
