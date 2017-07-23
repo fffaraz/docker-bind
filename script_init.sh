@@ -117,7 +117,6 @@ logging {
         severity dynamic;
         print-time yes;
     };
-
     category default { default_file; };
     category general { general_file; };
     category database { database_file; };
