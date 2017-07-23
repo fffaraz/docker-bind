@@ -137,6 +137,12 @@ logging {
 };
 EOL
 
+# http://www.zytrax.com/books/dns/ch7/logging.html
+# delegation-only
+# rpz
+# rate-limit
+# update-security
+
 cat > /etc/bind/named.conf.local <<'EOL'
 zone "." {
     type master;
