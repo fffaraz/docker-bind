@@ -20,4 +20,4 @@ $TTL 600
 EOL
 
 chown -R bind:bind /data
-exec /usr/sbin/named -g -u bind
+exec /usr/sbin/named -4 -f -u bind
