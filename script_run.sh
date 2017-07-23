@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euxo pipefail
 
-mkdir -p /data
+mkdir -p /data/log
 
 [ ! -f /data/zone.conf ] && touch /data/zone.conf
 
