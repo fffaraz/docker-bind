@@ -13,8 +13,10 @@ $TTL 600
  86400      ; Retry
  1206900    ; Expire
  600 )      ; Negative Cache TTL
-   IN NS ns1.example.net.
-*. IN A  127.0.0.1
+   IN NS   ns1.example.net.
+*. IN A    127.0.0.1
+*. IN AAAA ::1
+
 EOL
 
 chown -R bind:bind /data
