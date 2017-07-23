@@ -33,87 +33,87 @@ options {
 };
 logging {
     channel default_file {
-        file "/var/log/named/default.log" versions 3 size 5m;
+        file "/data/log/default.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel general_file {
-        file "/var/log/named/general.log" versions 3 size 5m;
+        file "/data/log/general.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel database_file {
-        file "/var/log/named/database.log" versions 3 size 5m;
+        file "/data/log/database.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel security_file {
-        file "/var/log/named/security.log" versions 3 size 5m;
+        file "/data/log/security.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel config_file {
-        file "/var/log/named/config.log" versions 3 size 5m;
+        file "/data/log/config.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel resolver_file {
-        file "/var/log/named/resolver.log" versions 3 size 5m;
+        file "/data/log/resolver.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel xfer-in_file {
-        file "/var/log/named/xfer-in.log" versions 3 size 5m;
+        file "/data/log/xfer-in.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel xfer-out_file {
-        file "/var/log/named/xfer-out.log" versions 3 size 5m;
+        file "/data/log/xfer-out.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel notify_file {
-        file "/var/log/named/notify.log" versions 3 size 5m;
+        file "/data/log/notify.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel client_file {
-        file "/var/log/named/client.log" versions 3 size 5m;
+        file "/data/log/client.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel unmatched_file {
-        file "/var/log/named/unmatched.log" versions 3 size 5m;
+        file "/data/log/unmatched.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel queries_file {
-        file "/var/log/named/queries.log" versions 3 size 5m;
+        file "/data/log/queries.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel network_file {
-        file "/var/log/named/network.log" versions 3 size 5m;
+        file "/data/log/network.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel update_file {
-        file "/var/log/named/update.log" versions 3 size 5m;
+        file "/data/log/update.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel dispatch_file {
-        file "/var/log/named/dispatch.log" versions 3 size 5m;
+        file "/data/log/dispatch.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel dnssec_file {
-        file "/var/log/named/dnssec.log" versions 3 size 5m;
+        file "/data/log/dnssec.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel lame-servers_file {
-        file "/var/log/named/lame-servers.log" versions 3 size 5m;
+        file "/data/log/lame-servers.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
