@@ -1,0 +1,1 @@
+tail -f queries.log | pv --line-mode --bytes --timer --rate --average-rate --interval 1 > /dev/null
