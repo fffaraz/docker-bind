@@ -12,8 +12,6 @@ chown root:bind /var/run/named
 mkdir -m 0775 -p /var/cache/bind
 chown root:bind /var/cache/bind
 
-rm -rf /var/lib/apt/lists/*
-
 cat > /etc/bind/named.conf <<'EOL'
 include "/etc/bind/named.conf.options";
 include "/etc/bind/named.conf.local";
@@ -149,3 +147,9 @@ zone "." {
     file "/data/root.zone";
 };
 EOL
+
+# Clean
+apt-get autoremove -y
+apt-get clean
+rm -rf /var/lib/apt/lists/* /var/cache/apk/* /tmp/* /var/tmp/*
+rm /install.sh
