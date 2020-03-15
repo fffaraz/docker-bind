@@ -15,7 +15,7 @@ chown root:bind /var/cache/bind
 cat > /etc/bind/named.conf <<'EOL'
 include "/etc/bind/named.conf.options";
 include "/etc/bind/named.conf.local";
-include "/data/zone.conf";
+include "/conf/zone.conf";
 EOL
 
 cat > /etc/bind/named.conf.options <<'EOL'
@@ -31,87 +31,87 @@ options {
 };
 logging {
     channel default_file {
-        file "/data/log/default.log" versions 3 size 5m;
+        file "/log/default.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel general_file {
-        file "/data/log/general.log" versions 3 size 5m;
+        file "/log/general.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel database_file {
-        file "/data/log/database.log" versions 3 size 5m;
+        file "/log/database.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel security_file {
-        file "/data/log/security.log" versions 3 size 5m;
+        file "/log/security.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel config_file {
-        file "/data/log/config.log" versions 3 size 5m;
+        file "/log/config.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel resolver_file {
-        file "/data/log/resolver.log" versions 3 size 5m;
+        file "/log/resolver.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel xfer-in_file {
-        file "/data/log/xfer-in.log" versions 3 size 5m;
+        file "/log/xfer-in.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel xfer-out_file {
-        file "/data/log/xfer-out.log" versions 3 size 5m;
+        file "/log/xfer-out.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel notify_file {
-        file "/data/log/notify.log" versions 3 size 5m;
+        file "/log/notify.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel client_file {
-        file "/data/log/client.log" versions 3 size 5m;
+        file "/log/client.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel unmatched_file {
-        file "/data/log/unmatched.log" versions 3 size 5m;
+        file "/log/unmatched.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel queries_file {
-        file "/data/log/queries.log" versions 3 size 5m;
+        file "/log/queries.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel network_file {
-        file "/data/log/network.log" versions 3 size 5m;
+        file "/log/network.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel update_file {
-        file "/data/log/update.log" versions 3 size 5m;
+        file "/log/update.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel dispatch_file {
-        file "/data/log/dispatch.log" versions 3 size 5m;
+        file "/log/dispatch.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel dnssec_file {
-        file "/data/log/dnssec.log" versions 3 size 5m;
+        file "/log/dnssec.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
     channel lame-servers_file {
-        file "/data/log/lame-servers.log" versions 3 size 5m;
+        file "/log/lame-servers.log" versions 3 size 5m;
         severity dynamic;
         print-time yes;
     };
@@ -144,7 +144,7 @@ EOL
 cat > /etc/bind/named.conf.local <<'EOL'
 zone "." {
     type master;
-    file "/data/root.zone";
+    file "/conf/root.zone";
 };
 EOL
 

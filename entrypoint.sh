@@ -1,11 +1,12 @@
 #!/bin/bash
 set -euxo pipefail
 
-mkdir -p /data/log
+mkdir -p /conf
+mkdir -p /log
 
-[ ! -f /data/zone.conf ] && touch /data/zone.conf
+[ ! -f /conf/zone.conf ] && touch /conf/zone.conf
 
-[ ! -f /data/root.zone ] && cat > /data/root.zone <<'EOL'
+[ ! -f /conf/root.zone ] && cat > /conf/root.zone <<'EOL'
 $TTL 600
 @ IN SOA . dnsadmin.example.net. (
  2017010101 ; Serial
@@ -19,5 +20,6 @@ $TTL 600
 
 EOL
 
-chown -R bind:bind /data
+chown -R bind:bind /conf
+chown -R bind:bind /log
 exec /usr/sbin/named -4 -f -u bind
