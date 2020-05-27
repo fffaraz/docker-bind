@@ -1,9 +1,10 @@
-version: '3'
+version: '3.5'
 
 services:
   dns:
     image: fffaraz/bind:latest
     restart: always
+    network_mode: host
     ports:
       - 53:53/tcp
       - 53:53/udp
