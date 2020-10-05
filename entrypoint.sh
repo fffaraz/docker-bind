@@ -4,17 +4,24 @@ set -euxo pipefail
 mkdir -p /conf
 mkdir -p /log
 
-[ ! -f /conf/zone.conf ] && touch /conf/zone.conf
+[ ! -f /conf/zones.conf ] && cat > /conf/zones.conf <<'EOL'
+zone "." {
+    type master;
+    file "/conf/root.zone";
+};
+
+EOL
 
 [ ! -f /conf/root.zone ] && cat > /conf/root.zone <<'EOL'
-$TTL 600
-@ IN SOA . dnsadmin.example.net. (
- 2017010101 ; Serial
+$TTL 3600
+@ IN SOA ns1.example.net. dnsadmin.example.net. (
+ 2019010101 ; Serial
  604800     ; Refresh
  86400      ; Retry
  1206900    ; Expire
- 600 )      ; Negative Cache TTL
+ 3600 )     ; Negative Cache TTL
    IN NS   ns1.example.net.
+   IN NS   ns2.example.net.
 *. IN A    127.0.0.1
 *. IN AAAA ::1
 

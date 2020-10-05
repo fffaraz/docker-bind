@@ -14,8 +14,7 @@ chown root:bind /var/cache/bind
 
 cat > /etc/bind/named.conf <<'EOL'
 include "/etc/bind/named.conf.options";
-include "/etc/bind/named.conf.local";
-include "/conf/zone.conf";
+include "/conf/zones.conf";
 EOL
 
 cat > /etc/bind/named.conf.options <<'EOL'
@@ -132,19 +131,6 @@ logging {
     category dispatch { dispatch_file; };
     category dnssec { dnssec_file; };
     category lame-servers { lame-servers_file; };
-};
-EOL
-
-# http://www.zytrax.com/books/dns/ch7/logging.html
-# delegation-only
-# rpz
-# rate-limit
-# update-security
-
-cat > /etc/bind/named.conf.local <<'EOL'
-zone "." {
-    type master;
-    file "/conf/root.zone";
 };
 EOL
 

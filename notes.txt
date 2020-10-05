@@ -1,1 +1,8 @@
 tail -f queries.log | pv --line-mode --bytes --timer --rate --average-rate --interval 1 > /dev/null
+---
+# http://www.zytrax.com/books/dns/ch7/logging.html
+# delegation-only
+# rpz
+# rate-limit
+# update-security
+---
