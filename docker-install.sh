@@ -15,6 +15,7 @@ chown root:bind /var/cache/bind
 cat > /etc/bind/named.conf <<'EOL'
 include "/etc/bind/named.conf.options";
 include "/conf/zones.conf";
+
 EOL
 
 cat > /etc/bind/named.conf.options <<'EOL'

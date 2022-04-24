@@ -2,12 +2,13 @@ version: '3.5'
 
 services:
   dns:
+    build: .
     image: fffaraz/bind:latest
     restart: always
     network_mode: host
     ports:
-      - 53:53/tcp
-      - 53:53/udp
+      - "53:53/tcp"
+      - "53:53/udp"
     volumes:
       - ./volumes/conf:/conf
       - ./volumes/log:/log
