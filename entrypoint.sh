@@ -6,8 +6,8 @@ mkdir -p /log
 
 [ ! -f /conf/zones.conf ] && cat > /conf/zones.conf <<'EOL'
 zone "." {
-    type master;
-    file "/conf/root.zone";
+  type master;
+  file "/conf/root.zone";
 };
 
 EOL
@@ -29,4 +29,4 @@ EOL
 
 chown -R bind:bind /conf
 chown -R bind:bind /log
-exec /usr/sbin/named -4 -f -u bind
+exec /usr/bin/tini -- /usr/sbin/named -4 -f -u bind
