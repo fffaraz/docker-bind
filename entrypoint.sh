@@ -29,4 +29,4 @@ EOL
 
 chown -R bind:bind /conf
 chown -R bind:bind /log
-exec /usr/bin/tini -- /usr/sbin/named -4 -f -u bind
+exec /usr/bin/tini -- /usr/sbin/named -f -u bind
