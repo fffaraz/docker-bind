@@ -9,8 +9,7 @@ RUN \
 	chown root:bind /var/run/named && \
 	mkdir -m 0775 -p /var/cache/bind && \
 	chown root:bind /var/cache/bind && \
-	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-	exit 0
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENTRYPOINT ["/tini", "--"]
 
