@@ -1,11 +1,10 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 
 mkdir -p /conf
 mkdir -p /log
 
-[ ! -f /conf/zones.conf ] && echo "zone "." { type master; file "/conf/root.zone"; };" > /conf/zones.conf
-
+[ ! -f /conf/zones.conf ] && echo 'zone "." { type master; file "/conf/root.zone"; };' > /conf/zones.conf
 
 [ ! -f /conf/root.zone ] && cat > /conf/root.zone <<'EOL'
 $TTL 86400

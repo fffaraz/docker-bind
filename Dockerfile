@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 RUN \
 	export DEBIAN_FRONTEND=noninteractive && \
-	apt-get update < /dev/null && \
+	apt-get update && \
 	apt-get install -yq --no-install-recommends bind9 bind9utils bind9-host tini && \
 	mv /etc/bind/named.conf /etc/bind/named.conf.default && \
 	mkdir -m 0775 -p /var/run/named && \
